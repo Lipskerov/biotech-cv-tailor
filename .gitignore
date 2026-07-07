@@ -1,0 +1,10 @@
+# personal / generated
+*.pdf
+my_master_profile.md
+out/
+__pycache__/
+*.pyc
+venv/
+.venv/
+.DS_Store
+.claude/
