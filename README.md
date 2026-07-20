@@ -46,6 +46,17 @@ biotech-cv-tailor/
    python render/render_cv.py tailored_cv.md --size letter
    ```
 
+   WeasyPrint also needs the Pango/Cairo system libraries — `pip install` alone is not enough:
+   ```bash
+   # macOS
+   brew install pango cairo gdk-pixbuf libffi
+   # Apple Silicon: point the loader at Homebrew's libs
+   export DYLD_FALLBACK_LIBRARY_PATH=/opt/homebrew/lib
+
+   # Debian / Ubuntu
+   sudo apt install libpango-1.0-0 libpangoft2-1.0-0 libcairo2 libgdk-pixbuf-2.0-0
+   ```
+
 ## Use it without the skill (any LLM + the render script)
 
 The method is documented in `skill/SKILL.md` + `skill/references/`. Feed those + your master profile + a JD to any capable LLM with: *"tailor my CV to this JD following the method and standing rules; output markdown."* Then render with `render_cv.py`.
